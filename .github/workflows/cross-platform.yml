@@ -13,6 +13,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   windows-qa:
+    # GitHub requires push access to read assets from a draft release.
+    permissions:
+      contents: write
     runs-on: windows-latest
     timeout-minutes: 10
     env:
@@ -53,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
     environment:
