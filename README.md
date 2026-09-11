@@ -84,3 +84,5 @@ Godot 与第三方依赖、字体许可随 `assets/` 提供。项目代码与自
 网页导出为 `game/index.html`，与 `web/index.html` 入口页及 `web/preview.png` 一起部署。必须使用 HTTP(S) 服务，不能通过双击本地 HTML 运行游戏。
 
 `.github/workflows/cross-platform.yml` 从指定 Release 下载并校验 Windows/Web 包，在 Windows 云端执行导出 EXE 的 17 项无窗口战斗检查，成功后部署同一 Web 包到 GitHub Pages。运行日志作为 Actions 附件保留。此前已知的退出资源清理提示仍需继续处理。
+
+[查看 v0.2.1 跨平台验证记录](docs/纸烬决斗_跨平台验证_20260911.md)
