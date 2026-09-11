@@ -1,0 +1,16 @@
+.godot/
+.DS_Store
+__MACOSX/
+.env
+.env.*
+*.key
+*.pem
+export_credentials.cfg
+builds/
+releases/
+source_models/
+documentary/
+*.blend1
+*.log
+verification/*
+!verification/.gitkeep
