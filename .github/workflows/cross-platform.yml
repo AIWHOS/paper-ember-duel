@@ -1,0 +1,78 @@
+name: Verify Windows and publish web game
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Release containing the Windows and Web packages
+        required: true
+        default: v0.2.1
+permissions:
+  contents: read
+concurrency:
+  group: paper-ember-cross-platform
+  cancel-in-progress: false
+jobs:
+  windows-qa:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+    steps:
+      - name: Download the exact release package and verify SHA-256
+        shell: pwsh
+        run: |
+          gh release download $env:RELEASE_TAG --pattern 'paper-ember-duel-windows-*.zip' --pattern 'SHA256SUMS-*.txt' --dir downloads
+          if ($LASTEXITCODE -ne 0) { throw "Release download failed" }
+          $zip = Get-ChildItem downloads -Filter '*.zip' | Select-Object -First 1
+          $line = Get-Content (Get-ChildItem downloads -Filter 'SHA256SUMS-*.txt').FullName | Where-Object { $_.EndsWith($zip.Name) }
+          if (!$line -or (Get-FileHash $zip.FullName -Algorithm SHA256).Hash.ToLower() -ne $line.Split(' ')[0]) { throw "Package hash mismatch" }
+          Expand-Archive $zip.FullName -DestinationPath game
+      - name: Run exported Windows executable combat checks
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem game -Recurse -Filter 'paper-ember-duel.exe' | Select-Object -First 1
+          if (!$exe) { throw "Missing game executable" }
+          $proc = Start-Process -FilePath $exe.FullName -ArgumentList '--headless','--','--qa' -WorkingDirectory $exe.DirectoryName -PassThru -RedirectStandardOutput stdout.log -RedirectStandardError stderr.log
+          if (!$proc.WaitForExit(90000)) { $proc.Kill(); throw "Combat checks timed out" }
+          $proc.Refresh()
+          Get-Content stdout.log
+          Get-Content stderr.log
+          $line = Get-Content stdout.log | Where-Object { $_.StartsWith('COMBAT_QA_PASS') }
+          if ($proc.ExitCode -ne 0 -or !$line) { throw "Windows combat checks failed" }
+          $checks = @(($line.Substring('COMBAT_QA_PASS'.Length) | ConvertFrom-Json).PSObject.Properties)
+          if ($checks.Count -ne 17 -or ($checks | Where-Object { $_.Value -ne $true })) { throw "Expected 17 passing checks" }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-combat-qa
+          path: '*.log'
+  publish-web:
+    needs: windows-qa
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+    steps:
+      - name: Download and verify the tested web package
+        run: |
+          gh release download "$RELEASE_TAG" --pattern 'paper-ember-duel-web-*.zip' --pattern 'SHA256SUMS-*.txt' --dir downloads
+          cd downloads
+          grep 'paper-ember-duel-web-' SHA256SUMS-*.txt | sha256sum -c -
+          unzip -q paper-ember-duel-web-*.zip -d ../site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment

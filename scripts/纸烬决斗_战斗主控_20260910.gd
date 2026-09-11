@@ -2,7 +2,7 @@ extends Node3D
 
 const WorldBuilder=preload("res://scripts/纸烬决斗_场景构建_20260910.gd")
 const ActorBuilder=preload("res://scripts/纸烬决斗_角色构建_20260910.gd")
-const SAVE_ROOT="res://verification/"
+const SAVE_ROOT="user://"
 var builder=WorldBuilder.new()
 var actors=ActorBuilder.new()
 var animator=preload("res://scripts/纸烬决斗_动作控制_20260910.gd").new()
@@ -191,7 +191,7 @@ func _create_ui() -> void:
 	menu.add_child(label("一页未尽，余烬不息。",21,Color("bcad90")))
 	var desc=label("踏入遗忘的教室。\n引出重拳，撕开纸甲，击碎燃烧的核心。",17,Color("a69b83"));desc.custom_minimum_size=Vector2(500,90);menu.add_child(desc)
 	menu.add_child(button("进入教室",start_game))
-	menu.add_child(button("退出",func():get_tree().quit()))
+	if not OS.has_feature("web"):menu.add_child(button("退出",func():get_tree().quit()))
 	menu.add_child(label("单人竞技场  ·  键盘与鼠标",12,Color("8d826b")))
 	end_layer=overlay();end_layer.hide()
 	var end_box=VBoxContainer.new();end_layer.add_child(end_box);end_box.position=Vector2(465,235);end_box.add_theme_constant_override("separation",22)
@@ -218,7 +218,7 @@ func start_game() -> void:
 	attack_pending=false;attack_elapsed=0;hit_pause=0;trail_points.clear();facing_yaw=PI;real_move_speed=0;animator.run_blend=0;demo_end_clock=0
 	game_time=0;hit_count=0;dodge_count=0;parry_count=0;damage_events=0;combo=0;yaw=0
 	state="playing";menu_layer.hide();end_layer.hide();pause_layer.hide();hud.show()
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED if not qa_mode and not demo_mode else Input.MOUSE_MODE_VISIBLE
+	Input.mouse_mode=play_mouse_mode() if not qa_mode and not demo_mode else Input.MOUSE_MODE_VISIBLE
 	message("先避开落拳，再攻击落地的纸甲",4)
 
 func back_to_menu() -> void:
@@ -226,14 +226,18 @@ func back_to_menu() -> void:
 
 func toggle_pause() -> void:
 	if state=="playing":state="paused";pause_layer.show();Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
-	elif state=="paused":state="playing";pause_layer.hide();Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	elif state=="paused":state="playing";pause_layer.hide();Input.mouse_mode=play_mouse_mode()
+
+func play_mouse_mode() -> int:
+	# Web uses relative motion within the canvas without requiring Pointer Lock.
+	return Input.MOUSE_MODE_HIDDEN if OS.has_feature("web") else Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):toggle_pause()
 	if event.is_action_pressed("capture"):screenshot_requested=true
 	if event.is_action_pressed("restart") and state in ["dead","victory"]:start_game()
 	if state!="playing":return
-	if event is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:yaw=clampf(yaw-event.relative.x*sensitivity,-.9,.9)
+	if event is InputEventMouseMotion and Input.mouse_mode in [Input.MOUSE_MODE_CAPTURED,Input.MOUSE_MODE_HIDDEN]:yaw=clampf(yaw-event.relative.x*sensitivity,-.9,.9)
 	if event.is_action_pressed("center"):yaw=0
 	if event.is_action_pressed("light"):attack(false)
 	if event.is_action_pressed("heavy") and attack_cd<=0:charge_down=true;charging=0
@@ -529,11 +533,13 @@ func sound(kind: String,volume: float) -> void:
 func capture_frame() -> void:
 	await RenderingServer.frame_post_draw
 	var im=get_viewport().get_texture().get_image()
-	var path=ProjectSettings.globalize_path(SAVE_ROOT+"纸烬决斗_实机预览_20260910.png")
-	if not DirAccess.dir_exists_absolute(path.get_base_dir()):
-		var folder=OS.get_environment("HOME").path_join("Codex/纸烬决斗_试玩记录_20260910")
-		DirAccess.make_dir_recursive_absolute(folder);path=folder.path_join("纸烬决斗_实机截图_20260910.png")
-	im.save_png(path);print("CAPTURE_SAVED ",path)
+	if OS.has_feature("web"):
+		JavaScriptBridge.download_buffer(im.save_png_to_buffer(),"paper-ember-duel-screenshot.png","image/png")
+		return
+	var path=ProjectSettings.globalize_path(SAVE_ROOT+"纸烬决斗_实机截图_20260911.png")
+	var error=im.save_png(path)
+	if error==OK:print("CAPTURE_SAVED ",path);message("截图已保存至游戏用户数据目录",2)
+	else:push_warning("Screenshot save failed: %s"%error)
 	if not qa_flow:
 		var record=ProjectSettings.globalize_path("res://documentary/过程记录_20260910/纸烬决斗_实机_%s_%03d秒_20260910.png"%[boss_state,int(game_time)])
 		if DirAccess.dir_exists_absolute(record.get_base_dir()):im.save_png(record)
@@ -597,7 +603,9 @@ func run_qa() -> void:
 	hurt_invul=0;receive_damage(1000,false);results["death"]=state=="dead"
 	var ok=true
 	for v in results.values():if not v:ok=false
-	var file=FileAccess.open(SAVE_ROOT+"纸烬决斗_战斗验证_20260910.json",FileAccess.WRITE);file.store_string(JSON.stringify({"passed":ok,"checks":results},"  "));file.close()
+	var file=FileAccess.open(SAVE_ROOT+"纸烬决斗_战斗验证_20260910.json",FileAccess.WRITE)
+	if file:file.store_string(JSON.stringify({"passed":ok,"checks":results},"  "));file.close()
+	else:push_error("Unable to save combat QA report");ok=false
 	print("COMBAT_QA_PASS" if ok else "COMBAT_QA_FAIL",JSON.stringify(results))
 	for a in audio_players:a.stop();a.stream=null
 	animator.skeletons.clear()

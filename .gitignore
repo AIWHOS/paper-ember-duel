@@ -14,3 +14,7 @@ documentary/
 *.log
 verification/*
 !verification/.gitkeep
+
+.export-templates
+export.cfg
+output/

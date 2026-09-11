@@ -2,9 +2,9 @@
 
 一张废弃教室的灵感图，变成纸片骑士对抗焚卷巨像的 **Godot 单人 3D Boss 战试玩原型**。
 
-**当前版本：v0.2.0 预览版** · Mac 下载试玩 · 含可编辑 Godot 工程与运行模型
+**当前版本：v0.2.1 跨平台预览版** · 电脑网页试玩 / Windows 下载 · Mac 保留 v0.2.0
 
-[下载 Mac 试玩包与动作演示](https://github.com/AIWHOS/paper-ember-duel/releases/tag/v0.2.0) · [制作过程](docs/纸烬决斗_制作说明_20260910.md)
+[在线试玩](https://aiwhos.github.io/paper-ember-duel/) · [下载 Windows 版](https://github.com/AIWHOS/paper-ember-duel/releases/download/v0.2.1/paper-ember-duel-windows-v0.2.1.zip) · [下载 Mac 版](https://github.com/AIWHOS/paper-ember-duel/releases/download/v0.2.0/paper-ember-duel-mac-v0.2.0.zip) · [制作过程](docs/纸烬决斗_制作说明_20260910.md)
 
 ![游戏实机暂停画面](docs/纸烬决斗_实机截图_20260910.png)
 
@@ -23,6 +23,14 @@
 | 暂停 / 继续 | Esc |
 | 结算后重试 | R |
 | 保存截图 | F8 |
+
+## 网页与 Windows 试玩
+
+- **网页**：打开 [试玩入口](https://aiwhos.github.io/paper-ember-duel/)，点击“进入网页试玩”，等待资源加载，再点击“进入教室”。请使用支持 WebGL 2 的电脑浏览器及键盘鼠标；手机触屏暂未适配。
+- **Windows x64**：下载 v0.2.1 ZIP，完整解压，保持 `paper-ember-duel.exe` 和 `paper-ember-duel.pck` 在同一文件夹，打开 EXE。无需安装 Godot。
+- Windows 包未签名；云端 Windows 无窗口测试只验证启动与战斗逻辑，不能替代人工操作、显卡兼容性与帧率验收。
+- v0.2.1 的桌面截图及验证报告使用 Godot 的 `user://` 数据目录；网页版 F8 触发 PNG 下载，镜头跟随画布内鼠标移动，无需浏览器鼠标锁定权限。Mac v0.2.0 的记录位置见下文。
+- 网页版关闭多线程与多重采样抗锯齿，以减少部署要求与渲染开销；模型、场景和战斗逻辑与桌面版共用。
 
 ## Mac 试玩
 
@@ -60,7 +68,7 @@ godot --editor --path .
 
 - 已有跑动、挥砍、蓄力重击、翻滚和弹反；动作仍有生硬感，未接入成熟动作库或动作捕捉。
 - 攻击使用原型级范围判定，桌椅木箱只有静态碰撞，不能击碎。
-- 没有多人联机、更多关卡和正式背景音乐；没有发布 Web / Windows 安装包。
+- 没有多人联机、更多关卡和正式背景音乐；手机触屏尚未适配。
 - 演示视频由引擎离线输出，不代表实际实时帧率。不能据此宣称全平台稳定 60 FPS。
 
 ## 文件与许可说明
@@ -68,3 +76,11 @@ godot --editor --path .
 `scripts/` 为游戏逻辑，`assets/` 为运行模型、纹理、字体和音效，`docs/` 为制作说明，`verification/` 用于本地检查输出。大体积高模、Blender 历史文件、账号记录、引擎安装包及生成缓存不包含在仓库内。
 
 Godot 与第三方依赖、字体许可随 `assets/` 提供。项目代码与自有美术尚未指定统一开源许可证；仓库公开不代表所有素材可不受限制地商用或单独再分发。详见 [素材来源说明](docs/纸烬决斗_素材来源说明_20260910.md)。
+
+## 重新导出与自动化
+
+使用 Godot 4.7.2 的官方导出模板，将 `templates/` 中的 `windows_release_x86_64.exe`、`windows_debug_x86_64.exe`、`web_nothreads_release.zip`、`web_nothreads_debug.zip` 放到工程根目录的 `.export-templates/` 中（该目录不提交）。`export_presets.cfg` 已包含 Windows Desktop 和 Web 配置。
+
+网页导出为 `game/index.html`，与 `web/index.html` 入口页及 `web/preview.png` 一起部署。必须使用 HTTP(S) 服务，不能通过双击本地 HTML 运行游戏。
+
+`.github/workflows/cross-platform.yml` 从指定 Release 下载并校验 Windows/Web 包，在 Windows 云端执行导出 EXE 的 17 项无窗口战斗检查，成功后部署同一 Web 包到 GitHub Pages。运行日志作为 Actions 附件保留。此前已知的退出资源清理提示仍需继续处理。
