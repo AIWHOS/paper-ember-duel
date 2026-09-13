@@ -1,0 +1,420 @@
+{
+  "project": "纸烬决斗",
+  "date": "2026-09-13",
+  "source_repository": "https://github.com/AIWHOS/paper-ember-duel",
+  "files": [
+    {
+      "path": "GLB_VALIDATION.json",
+      "bytes": 2135,
+      "sha256": "f506c730f1e78824b893f69661308c7af474c534b3ee6e82ff10db432724fbf6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1850,
+      "sha256": "9c4e3fb51a4b937822b2bba92ff9ca7b388281d4f9f70300dcf6fb3dad6c9330"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910.glb",
+      "bytes": 10765660,
+      "sha256": "12a225e8b1da53c2c26d3eeba36e3d128a441de46088a64d5d279d5aa2595de7"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910.glb.import",
+      "bytes": 1248,
+      "sha256": "6f118f1dd9ccd61b8768744aa8066a3115ec54d9a7eb7a80b99e5c17d879ce6e"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_diffuse.png",
+      "bytes": 3843388,
+      "sha256": "f7051aeaf4a17578fc0ca4692b43cfbe3a847098dad5649aec47e1b70f1028f4"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_diffuse.png.import",
+      "bytes": 1150,
+      "sha256": "13a74e3bfb200a7885f53794bac85dd8418bcdef7dcbf2e63af1fe1c609a5972"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_metallic-texture_roughness.png",
+      "bytes": 2148984,
+      "sha256": "47413fd1dc9229631846e3f7bd279acf346eda9a8501493fb177f478945d8371"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_metallic-texture_roughness.png.import",
+      "bytes": 1207,
+      "sha256": "4b04150f57abc0c793f7ae612d8957c19725dc6d53de8a834c1c56e498dd9738"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_normal.png",
+      "bytes": 4149361,
+      "sha256": "b365f87fc290bb742d42d4547d465c5955c696ad0039c269d4e70a35f6f70567"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木椅游戏道具_20260910_texture_normal.png.import",
+      "bytes": 1147,
+      "sha256": "a9bc8c8c1ff5093485d8c082767f901e6ba7e5f3c346c38e1f1b64e52ce8a5e7"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910.glb",
+      "bytes": 9717812,
+      "sha256": "9437d5746c1458073acbc0f6b36dcfb0bac5db774719340eff1f6c080a4cb988"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910.glb.import",
+      "bytes": 1248,
+      "sha256": "e379a50bd25b7fd44f2016d26c09945bd373c9cc6854a8dbb43cc340beb522ef"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_diffuse.png",
+      "bytes": 3790924,
+      "sha256": "fd63f15b1ea18512f8a852f0e76afef291576d8155a6232572aca9583a541625"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_diffuse.png.import",
+      "bytes": 1151,
+      "sha256": "6409acc3c7b997b03a61904b12490ad8871f3436ac28c48a03077cc3a83b86bb"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_metallic-texture_roughness.png",
+      "bytes": 2246650,
+      "sha256": "14ad8258de1d2b603e83f96e6a78da4a8e0340a4af67568e5a67d5a0ac36ed64"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_metallic-texture_roughness.png.import",
+      "bytes": 1207,
+      "sha256": "e580a1817e61ce10f87a18a8e1c18ce56dbdedbeb04600b6b4c19cbc1f63ad4e"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_normal.png",
+      "bytes": 3180397,
+      "sha256": "3cdcccea631736d42a0ed119194e2dc7fae596c38b4636e90f3d5b98406c27c8"
+    },
+    {
+      "path": "assets/props/纸烬决斗_木箱游戏道具_20260910_texture_normal.png.import",
+      "bytes": 1148,
+      "sha256": "0d25dd49cb5d2a5848bbafe9b4622a49784825952263c74003bd8b5ba17fbc24"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910.glb",
+      "bytes": 9852216,
+      "sha256": "960596a38f63dc6f6ca824fd3252ef1a7a261a3b6df00db0d587781b977464c2"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910.glb.import",
+      "bytes": 1248,
+      "sha256": "82907fa7f2e1c6f85d176d63598821bfd4742d054bd7b4f1652abaf9fbfbe336"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_diffuse.png",
+      "bytes": 3700035,
+      "sha256": "99599b6c37f427468f7ae3c5576cb12c3b1fa8027367722c32562152e8643ad0"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_diffuse.png.import",
+      "bytes": 1151,
+      "sha256": "f63094830c81f3d0faf2ae15deca7fbe55ee0d92430b0a1eb62767d8bcd9161a"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_metallic-texture_roughness.png",
+      "bytes": 2071598,
+      "sha256": "2ef8291d991f32074838241ece7994bf4935fcf6ced5ad390814e4ade4315c6c"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_metallic-texture_roughness.png.import",
+      "bytes": 1207,
+      "sha256": "cc05e20793b70830df61fbf9ab05792da56950d461f918b40ef2ef4f0857e1f7"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_normal.png",
+      "bytes": 3450077,
+      "sha256": "a9bf9541119f936dbfe0e0591e3f6930a2368150424b4c4535c459787ab50a81"
+    },
+    {
+      "path": "assets/props/纸烬决斗_课桌游戏道具_20260910_texture_normal.png.import",
+      "bytes": 1148,
+      "sha256": "b9efb50312143d940b19e0255c69310c198456144dc1b3ab1756bbbf3bf6f46b"
+    },
+    {
+      "path": "assets/纸烬决斗_Godot第三方许可_20260910.txt",
+      "bytes": 100327,
+      "sha256": "d5aeff0741d5cb7a566befd8867667549c8bb46399a0e93091273b632bbefd96"
+    },
+    {
+      "path": "assets/纸烬决斗_Godot许可_20260910.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    {
+      "path": "assets/纸烬决斗_中文字体_20260910.ttf",
+      "bytes": 81520,
+      "sha256": "036689fe903025f332649fb06b827712875e96d6dba73c6ed2aec505c75eaea2"
+    },
+    {
+      "path": "assets/纸烬决斗_中文字体_20260910.ttf.import",
+      "bytes": 833,
+      "sha256": "f62e58166cb733ff31463d8b1b3e3ae8c315b61bd29c5f2b5a945eabbc071ec8"
+    },
+    {
+      "path": "assets/纸烬决斗_场景材质_20260910.gdshader",
+      "bytes": 1009,
+      "sha256": "3b5e6d428bd33261c5c81903dd43c5298901fc2ebedbc92e62a04c93be456b04"
+    },
+    {
+      "path": "assets/纸烬决斗_场景材质_20260910.gdshader.uid",
+      "bytes": 20,
+      "sha256": "1f6bc8dda676c9d48cf51afc0c3cc7c6b4757b7bc355d6f3416fa6ee6116599f"
+    },
+    {
+      "path": "assets/纸烬决斗_字体授权_20260910.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910.glb",
+      "bytes": 22463632,
+      "sha256": "d64dae102ffa95ddacc9f9cea92c84799eee02ce2debfafbd3d595b7cf3ec507"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910.glb.import",
+      "bytes": 1242,
+      "sha256": "b2dd1d5efdb17b2b51c349d5fb36a74bf239c535f22908eadb860886bd088587"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_diffuse.png",
+      "bytes": 4759866,
+      "sha256": "d8665ab14ac49fbff1a3d93c7557ceb0e7523211675a4c7c2d8240c22e5fa1ba"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_diffuse.png.import",
+      "bytes": 1145,
+      "sha256": "09097278c04a186d8b14b540bfc8abd9a4d70b24c4454a0182be1e21ed8a6015"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_metallic-texture_roughness.png",
+      "bytes": 2823334,
+      "sha256": "803b44b969bf1cccc52ab6169d2367481ae627a95b951647d2f08d6d0ab8f1b9"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_metallic-texture_roughness.png.import",
+      "bytes": 1202,
+      "sha256": "5ca5af79138602a124a62649fc2693822c8805d9e3c5f5b98a6f1821b9c04a88"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_normal.png",
+      "bytes": 4053495,
+      "sha256": "9745f02c43421f2ebf2b1cbd7707cf1f876b07ce9f71a2db552b0f614b38fe88"
+    },
+    {
+      "path": "assets/纸烬决斗_巨像游戏模型_20260910_texture_normal.png.import",
+      "bytes": 1142,
+      "sha256": "59741b0f7dcc1a7ee31a5249cac46e9e5c2e139bc2ff3def3542c69ccbe95c66"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_break_20260910.wav",
+      "bytes": 27386,
+      "sha256": "fe83a934b72a6caf4a235b1fbda41ac677d5ba3d927d5309e3e5f24c5a6a69b6"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_break_20260910.wav.import",
+      "bytes": 565,
+      "sha256": "2f76a87d924b0bd44decf122daace18add58f18e8a0f326cd56d895eec8f855e"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_burn_20260910.wav",
+      "bytes": 35324,
+      "sha256": "bcafffe8c78ee8da58ae7dc29d8bfd838df862ff86d63eae7891819151255754"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_burn_20260910.wav.import",
+      "bytes": 564,
+      "sha256": "921b435ebce2f4f1611b97df545730ce99910ba042b895116d28478452b191c1"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_hit_20260910.wav",
+      "bytes": 12392,
+      "sha256": "d8036c999fdca32175f5c1f4f4a8cdd17cf9af25841830bb5ef60f4b0bc711a0"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_hit_20260910.wav.import",
+      "bytes": 561,
+      "sha256": "87bc3d18eb0ea55290ec05f3d01890d8fb4b0b49dd53e42be071b28f2f230eab"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_hurt_20260910.wav",
+      "bytes": 13274,
+      "sha256": "7b70c9243813c1e18edf97267f8cf53cfa8e8556d45b3f2d0ddfa7d2e31f4bb4"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_hurt_20260910.wav.import",
+      "bytes": 562,
+      "sha256": "979636bea750f67cce5c2a9fcb4ae3df474254a877db12f624eb6349877d9a2d"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_parry_20260910.wav",
+      "bytes": 19888,
+      "sha256": "670990cbd040e24ef532a353ca89705ba432dfcb38bf77389cf4abd9d7610e08"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_parry_20260910.wav.import",
+      "bytes": 567,
+      "sha256": "f06e69b9a93c6ac2c4f9cf3cd2b3353368d285fdfd667de5a963cdf29ed3a290"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_slam_20260910.wav",
+      "bytes": 28708,
+      "sha256": "0a022063a425890243a6df485a28f8e3abe22ea516cea71bbea3d69b44b10e0f"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_slam_20260910.wav.import",
+      "bytes": 563,
+      "sha256": "2bdb0c0e1dc689da2cb448fe17fe6bf7996c03f0812eb9e982a1b7fe4c5eec3f"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_swing_20260910.wav",
+      "bytes": 10628,
+      "sha256": "fb648fa64860c21210a05b8e1ec312986aecac9cdc85ac34dd34d21b24db6858"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_swing_20260910.wav.import",
+      "bytes": 567,
+      "sha256": "77816469602a9d1ba65c294abe4057d08f5e54b95f4e56fdf9dbdab6a539a6ac"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_windup_20260910.wav",
+      "bytes": 26504,
+      "sha256": "86d5b5ec6fb883656a9c667bb9655a1f6e4ae4c9b66050eec076124fd10176aa"
+    },
+    {
+      "path": "assets/纸烬决斗_音效_windup_20260910.wav.import",
+      "bytes": 570,
+      "sha256": "fb78a92edbb80810b599f9581a0d017ea408bb0cdc1045025b9543e06af43231"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910.glb",
+      "bytes": 15117936,
+      "sha256": "45f483b50516ef58233dd041fc60eb8f23d75d19ff079560c4a1f66696e8b301"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910.glb.import",
+      "bytes": 1242,
+      "sha256": "4ecfc42e3ae7bf27e0a74b6becfcce633d83661b9973830ac3b068e9e0395207"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_diffuse.png",
+      "bytes": 4340747,
+      "sha256": "c2e5342b8bcefff9ac384686abc1a287437813eb3c9cadf7c751087366786bed"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_diffuse.png.import",
+      "bytes": 1145,
+      "sha256": "ff6907af77cd0579be22bd704680f58b8a8d56bed0ad063689601fd354cd0723"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_metallic-texture_roughness.png",
+      "bytes": 2525823,
+      "sha256": "89c28b06f61ea2b8c72d59e800651849a780e1ae81acea2fe9b5a725e9a72eb4"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_metallic-texture_roughness.png.import",
+      "bytes": 1202,
+      "sha256": "d783dade04f935274bd63a2057750a84418dc14a9338aa18dc2b23c32a1dcde8"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_normal.png",
+      "bytes": 5596603,
+      "sha256": "95c0400b76499feb339fbc8d31caabd050229db1ca3c87868383dc9c041ab87c"
+    },
+    {
+      "path": "assets/纸烬决斗_骑士游戏模型_20260910_texture_normal.png.import",
+      "bytes": 1142,
+      "sha256": "f1927744275ae67eeed9db6aa43a267404ab9dd20d08399e21d18403fba54cdf"
+    },
+    {
+      "path": "source_models/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source_models/纸烬决斗_巨像BANG拆件_20260910.glb",
+      "bytes": 80947076,
+      "sha256": "d154ff3fda40f677bae2d91ac934201b9d20babf86b64936716e93fbb8a3da4e"
+    },
+    {
+      "path": "source_models/纸烬决斗_巨像原始高模_20260910.glb",
+      "bytes": 55755772,
+      "sha256": "3b838aae040c7cc3c16654c8aa34afd824d4571f76663df749881eee842d6745"
+    },
+    {
+      "path": "source_models/纸烬决斗_巨像原始高模检查场景_20260910.blend",
+      "bytes": 51289949,
+      "sha256": "0b4fe4d36ad3e8c2f8eaffc1dcc89e2a1dced85b80525350970564184db7acb9"
+    },
+    {
+      "path": "source_models/纸烬决斗_巨像绑定源文件_20260910.blend",
+      "bytes": 24810178,
+      "sha256": "d5bb3f98b4b19aff8046e40c68884c3f2fe7777ffc21f2e6c19e0508c45cb576"
+    },
+    {
+      "path": "source_models/纸烬决斗_巨像部件映射_20260910.json",
+      "bytes": 187,
+      "sha256": "a20195f4581263f5a5307bb46b3b467fdd0eb0f010e2965d58cddb40b7532fba"
+    },
+    {
+      "path": "source_models/纸烬决斗_木椅优化源文件_20260910.blend",
+      "bytes": 11120355,
+      "sha256": "4677f77da25cf2985b2a65d716994aaa0a69e7179ada9cd0761014aa740e1940"
+    },
+    {
+      "path": "source_models/纸烬决斗_木椅原始高模_20260910.glb",
+      "bytes": 40535052,
+      "sha256": "e6b4ea1c2d9cce5786dd68213ecf5afb23ae900843263b3a7f42f214f2ac9f1c"
+    },
+    {
+      "path": "source_models/纸烬决斗_木箱优化源文件_20260910.blend",
+      "bytes": 10044187,
+      "sha256": "d29c5c4fb92e344ac248e795bdcc46aa3fe4895f42419333eb296bbe287f78f8"
+    },
+    {
+      "path": "source_models/纸烬决斗_木箱原始高模_20260910.glb",
+      "bytes": 39546428,
+      "sha256": "a3f44bc06c358941616fe24f9357c566f7ac34da7a947654d7832ae1553776fb"
+    },
+    {
+      "path": "source_models/纸烬决斗_课桌优化源文件_20260910.blend",
+      "bytes": 10188880,
+      "sha256": "723b61934e2f36be261d9ab898f515f23ea9c5f9933bf9ee108af9c473b0cf74"
+    },
+    {
+      "path": "source_models/纸烬决斗_课桌原始高模_20260910.glb",
+      "bytes": 39475320,
+      "sha256": "f4fd7fb43a993a6762363cb7edb4febd7d6193a84f6982b01e7f6c1d53e0860f"
+    },
+    {
+      "path": "source_models/纸烬决斗_骑士BANG拆件_20260910.glb",
+      "bytes": 72592828,
+      "sha256": "40f5e7dd3962c30917cf11bc54616b9a53032626da7172783696ce2d7919b767"
+    },
+    {
+      "path": "source_models/纸烬决斗_骑士原始高模_20260910.glb",
+      "bytes": 45569304,
+      "sha256": "f8d62b692078e4fba39ab267dea3341cd2431e9a1bb8513c027003a4fee7c80d"
+    },
+    {
+      "path": "source_models/纸烬决斗_骑士原始高模检查场景_20260910.blend",
+      "bytes": 48108764,
+      "sha256": "40fc407f9e7cc9e000863cee718e2aa9fdaf5e6f2938fdd65c7c05d008f5f02d"
+    },
+    {
+      "path": "source_models/纸烬决斗_骑士绑定源文件_20260910.blend",
+      "bytes": 16548215,
+      "sha256": "d985c913c2d60c16590ec3a82c73d72795ffd26af5d8668d9c31224625be407b"
+    },
+    {
+      "path": "素材来源与许可说明.md",
+      "bytes": 977,
+      "sha256": "75bebe8153fd35429f4bad56e2afb1b511e8a82d828699750df35cf3a94fbeca"
+    }
+  ],
+  "total_payload_bytes": 667527586,
+  "glb_files": 12,
+  "blend_files": 7
+}
