@@ -6,6 +6,8 @@
 
 [在线试玩](https://aiwhos.github.io/paper-ember-duel/) · [下载 Windows 版](https://github.com/AIWHOS/paper-ember-duel/releases/download/v0.2.1/paper-ember-duel-windows-v0.2.1.zip) · [下载 Mac 版](https://github.com/AIWHOS/paper-ember-duel/releases/download/v0.2.0/paper-ember-duel-mac-v0.2.0.zip) · [制作过程](docs/纸烬决斗_制作说明_20260910.md)
 
+**[下载完整 3D 资产包（含高模、BANG 分件与 Blender 源文件）](https://github.com/AIWHOS/paper-ember-duel/releases/download/v0.2.1/paper-ember-duel-assets-20260913.zip)**
+
 ![游戏实机暂停画面](docs/纸烬决斗_实机截图_20260910.png)
 
 ## 怎么玩
